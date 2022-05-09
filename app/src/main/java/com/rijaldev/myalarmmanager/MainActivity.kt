@@ -2,6 +2,7 @@ package com.rijaldev.myalarmmanager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.rijaldev.myalarmmanager.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -67,6 +68,7 @@ class MainActivity : AppCompatActivity(), DatePickerFragment.DialogDateListener,
         val calendar = Calendar.getInstance()
         calendar.set(year, month, dayOfMonth)
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        Log.d("TAG", "onDialogDateSet: $dateFormat")
 
         binding.tvOnceDate.text = dateFormat.format(calendar.time)
     }
